@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Tiger</title>
+    <script type="text/javascript" src="app/lib/angular.js"></script>
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/controllers/appController.js"></script>
+</head>
+<body ng-app="app" ng-controller="appController">
+<div ng-style="mainContainer">
+    <div class = "infoContainer" ng-style="infoClass">
+        <p ng-style="labelStyle">Tiger</p>
+        <span ng-style = 'labelStyle'>Name :</span><span ng-style="dataStyle"> {{tiger.Name}} </span><br/>
+        <span ng-style = 'labelStyle'>Born :</span><span ng-style="dataStyle">  {{tiger.Born}} </span><br/>
+        <span ng-style = 'labelStyle'>BirthDate :</span><span ng-style="dataStyle">  {{tiger.BirthDate}}</span><br/>
+        <span ng-style = 'labelStyle'>Live :</span><span ng-style="dataStyle">  {{tiger.Live}}</span> <br/>
+    </div>
+    <div class="imageContainer" ng-style="imageClass">
+        <img ng-src={{url}} ng-style="imageStyle"/>
+    </div>
+</div>
+
+</body>
+</html>
