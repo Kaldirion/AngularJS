@@ -10,11 +10,11 @@
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/controller/StoreController.js"></script>
 
-    <div ng-hide="storeProducts[0].soldOut">
-        <h1> {{storeProducts[0].name}} </h1>
-        <h2> ${{storeProducts[0].price}}</h2>
-        <p> {{storeProducts[0].description}}</p>
-        <button ng-show="storeProducts[0].canPurchase">Add to Cart</button>
+    <div ng-repeat='product in storeProducts' ng-hide="product.soldOut">
+        <h1> {{product.name}} </h1>
+        <h2> ${{product.price}}</h2>
+        <p> {{product.description}}</p>
+        <button ng-show="product.canPurchase">Add to Cart</button>
     </div>
 </body>
 </html>
