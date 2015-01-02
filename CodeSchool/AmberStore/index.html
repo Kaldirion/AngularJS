@@ -10,11 +10,23 @@
     <script type="text/javascript" src="app/app.js"></script>
     <script type="text/javascript" src="app/controller/StoreController.js"></script>
 
-    <div ng-repeat='product in storeProducts' ng-hide="product.soldOut">
-        <h1> {{product.name}} </h1>
-        <h2> ${{product.price}}</h2>
-        <p> {{product.description}}</p>
-        <button ng-show="product.canPurchase">Add to Cart</button>
-    </div>
+    <ul class="list-group">
+        <li class="list-group-item" ng-repeat="product in storeProducts">
+            <div>
+                <h3>
+                    {{product.name}}
+                    <em class="pull-right">{{product.price | currency}}</em>
+                </h3>
+                <img ng-src={{product.images[0].full}}><br/>
+                {{product.description}}
+            </div>
+
+            <div ng-repeat="image in product.images" class = "img-thumbnail">
+                <img ng-src={{image.thumb}}>
+            </div>
+           <br/><button ng-show="product.canPurchase">Add to Cart</button>
+        </li>
+    </ul>
+
 </body>
 </html>
